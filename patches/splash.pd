@@ -1,0 +1,36 @@
+#N canvas 2471 452 1099 846 12;
+#X obj 22 109 bng 24 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#X obj 22 47 inlet;
+#X obj 22 392 throw~ output;
+#X obj 106 215 soundfiler;
+#X obj 106 55 loadbang;
+#X obj 132 104 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 25 258 tabplay~ splashLeft;
+#X obj 172 259 tabplay~ splashRight;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array splashLeft 100 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
+#X coords 0 1 100 -1 200 140 1;
+#X restore 272 24 graph;
+#X msg 89 168 read -resize splash.wav splashLeft splashRight;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array splashRight 100 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
+#X coords 0 1 100 -1 200 140 1;
+#X restore 295 235 graph;
+#X connect 0 0 6 0;
+#X connect 0 0 7 0;
+#X connect 1 0 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 9 0;
+#X connect 6 0 2 0;
+#X connect 7 0 2 0;
+#X connect 9 0 3 0;

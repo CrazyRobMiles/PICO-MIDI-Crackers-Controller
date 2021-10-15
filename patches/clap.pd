@@ -1,0 +1,28 @@
+#N canvas 1791 456 1330 979 12;
+#X obj 22 109 bng 24 250 50 0 empty empty empty 17 7 0 10 -4034 -1
+-1;
+#X obj 22 47 inlet;
+#X obj 22 392 throw~ output;
+#X obj 95 158 soundfiler;
+#X obj 106 55 loadbang;
+#X obj 102 91 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array clapLeft 11936 float 2;
+#X coords 0 1 11936 -1 200 140 1;
+#X restore 396 21 graph;
+#N canvas 0 50 450 250 (subpatch) 0;
+#X array clapRight 11936 float 2;
+#X coords 0 1 11936 -1 200 140 1;
+#X restore 396 191 graph;
+#X msg 95 130 read -resize clap.wav clapLeft clapRight;
+#X obj 25 258 tabplay~ clapLeft;
+#X obj 172 259 tabplay~ clapRight;
+#X connect 0 0 9 0;
+#X connect 0 0 10 0;
+#X connect 1 0 0 0;
+#X connect 4 0 5 0;
+#X connect 5 0 8 0;
+#X connect 8 0 3 0;
+#X connect 9 0 2 0;
+#X connect 10 0 2 0;
