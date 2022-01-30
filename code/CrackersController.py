@@ -218,7 +218,7 @@ class CrackersController:
                            button_pin=board.GP15, pixel_start=36, no_of_pixels=12, forward=True, pixel_offset=-1,
                            configs=c2),
             MidiController(client=self, name="c3", encoder_pin1=board.GP6, encoder_pin2=board.GP7, pulses_rev=20,
-                           button_pin=board.GP13, pixel_start=12, no_of_pixels=12, forward=True, pixel_offset=5,
+                           button_pin=board.GP17, pixel_start=12, no_of_pixels=12, forward=True, pixel_offset=5,
                            configs=c3),
             MidiController(client=self, name ="c4", encoder_pin1=board.GP4, encoder_pin2=board.GP5, pulses_rev=20,
                            button_pin=board.GP12, pixel_start=0, no_of_pixels=12, forward=False, pixel_offset=8,
@@ -226,7 +226,7 @@ class CrackersController:
             ]
         self.midi = adafruit_midi.MIDI(midi_out=usb_midi.ports[1], out_channel=0)
         no_of_pixels = len(self.controllers)*12
-        self.pixels = neopixel.NeoPixel(board.GP0,no_of_pixels,auto_write=False)
+        self.pixels = neopixel.NeoPixel(board.GP13,no_of_pixels,auto_write=False)
         self.pixels.brightness = 0.5
         self.change_all_controllers = True
         

@@ -3,11 +3,11 @@
 -1;
 #X obj 22 47 inlet;
 #X obj 22 392 throw~ output;
-#X obj 95 158 soundfiler;
-#X obj 106 55 loadbang;
-#X obj 102 91 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 97 131 soundfiler;
+#X obj 108 28 loadbang;
+#X obj 104 64 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X msg 95 130 read -resize cowbell.wav cowbellLeft cowbellRight;
+#X msg 97 103 read -resize cowbell.wav cowbellLeft cowbellRight;
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array cowbellLeft 6520 float 2;
 #X coords 0 1 6520 -1 200 140 1;
@@ -15,7 +15,7 @@
 #N canvas 0 50 450 250 (subpatch) 0;
 #X array cowbellRight 6520 float 2;
 #X coords 0 1 6520 -1 200 140 1;
-#X restore 488 204 graph;
+#X restore 473 202 graph;
 #X obj 25 258 tabplay~ cowbellLeft;
 #X obj 225 259 tabplay~ cowbellRight;
 #X connect 0 0 9 0;
