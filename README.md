@@ -21,3 +21,23 @@ The controller outputs control changed messages on MIDI channel 1. The control n
 
 ## Pure Data
 The patches folder contains the Pure Data patches and resources for the synthesizer. Open the "CheeseSynth" patch with Pure Data.
+# Devices
+You can use the controller with lots of devices....
+## Synthstrom Deluge
+![Crackers controller with Synthstrom Deluge](images/deluge.jpg)
+The [Synthstrom Deluge](https://synthstrom.com/product/deluge/) is an awesome synthesizer, sampler and sequencer. 
+
+You can connect the Crackers Controller directly to a Deluge. You'll need a "Type A Female to USB B Male Scanner Printer Extension Adapter Cable" that will let you plug the USB cable from the controller into the Deluge. You will also have to make sure that the Deluge is powered from a mains adapter. 
+
+You use the MIDI learn feature of the Deluge to assign controller outputs to setting values:
+
+* Go to the MIDI, Synth or sample clip that you want to use with the controller.
+* Find a setting for the clip that you want to control. I like playing with the value of Bitcrush (7 from the left and 1 down).
+* Hold down the SHIFT key and press the setting button (perhaps Bitcrush) you want to control.  This should make the setting button flash and the current value of the setting is shown in the four digit display. You can now change that settign by twiddling the black select knob in the middle of the Deluge.
+* To assign one of the controller knobs to this setting press and hold the Learn button. and twiddle the knob on the Crackers Controller. The four digit display will show "LEAr" to indicate that the control has been learned.
+* Now when you twiddle the knob on the Crackers Controller you should see the value in the display changing. 
+* The controller assignments are saved as part of the song data so they will be restored when you reload the song. 
+
+Some settings can't be controlled over MIDI. If you try to control one of these you will see the word "Cant" displayed when you press the Learn button.
+
+Remember that you have four different banks of setting values, change between the banks by pressing in any of the knobs on the controller. If you want to control a particular setting from multiple banks you can do this by using learn multiple times for that setting. 
