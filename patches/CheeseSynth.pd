@@ -1,4 +1,4 @@
-#N canvas 1354 918 2590 1081 12;
+#N canvas 640 710 2590 1081 12;
 #X obj 16 323 dac~ 1 2;
 #X floatatom 194 151 3 0 0 0 - - -;
 #X obj 139 56 notein, f 24;
@@ -27,6 +27,8 @@
 #X text 352 96 Wrap the channel range;
 #X obj 271 325 clone voice 6;
 #X obj 289 230 poly 6 1;
+#X obj 632 24 loadbang;
+#X obj 648 78 controller;
 #X connect 2 0 3 0;
 #X connect 2 0 7 0;
 #X connect 2 1 3 1;
@@ -59,3 +61,4 @@
 #X connect 27 0 17 0;
 #X connect 27 1 9 1;
 #X connect 27 2 9 2;
+#X connect 28 0 29 0;

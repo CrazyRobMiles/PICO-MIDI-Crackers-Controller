@@ -1,4 +1,4 @@
-#N canvas 1490 568 1026 755 12;
+#N canvas 1011 1267 2155 755 12;
 #X obj 115 8 ctlin;
 #X floatatom 67 68 5 0 0 0 value - -;
 #X floatatom 207 66 5 0 0 0 controller - -;
@@ -14,6 +14,14 @@
 #X text 62 171 trigger a send on each input, f 13;
 #X text 179 270 create a send command;
 #X text 127 312 perform the send command;
+#X obj 645 16 inlet;
+#X obj 623 74 80;
+#X obj 612 152 send sine;
+#X obj 691 76 0;
+#X obj 694 151 send phase;
+#X obj 751 72 20;
+#X obj 754 122 send attack;
+#X obj 862 124 send decay;
 #X connect 0 0 1 0;
 #X connect 0 1 2 0;
 #X connect 1 0 5 0;
@@ -24,3 +32,10 @@
 #X connect 6 0 3 0;
 #X connect 7 0 4 0;
 #X connect 8 0 7 0;
+#X connect 15 0 16 0;
+#X connect 15 0 18 0;
+#X connect 15 0 20 0;
+#X connect 16 0 17 0;
+#X connect 18 0 19 0;
+#X connect 20 0 21 0;
+#X connect 20 0 22 0;
