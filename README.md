@@ -11,6 +11,25 @@ To find out more about the device click on the image above to see a short video.
 You can find the program in the code folder. 
 ## Construction
 The software is written in Circuit Python which version 7.0 can be installed on your Raspberry PI PICO using the image from here: https://circuitpython.org/downloads. It uses the Adafruit adafruit_bus_device and adafruit_midi libraries which need to be copied into the lib folder on the Circuit Python drive of your PICO. You can find these here: https://circuitpython.org/libraries. 
+### Connections
+Check the code for the GPIO connections for the rotary encoder. You can see it below, it starts on line 213 in the main.py file.
+```
+self.controllers = [
+    MidiController(client=self, name="c1", encoder_pin1=board.GP8, encoder_pin2=board.GP9, pulses_rev=20,
+                   button_pin=board.GP14, pixel_start=24, no_of_pixels=12, forward=True, pixel_offset=2,
+                   configs=c1),
+    MidiController(client=self, name="c2", encoder_pin1=board.GP10, encoder_pin2=board.GP11, pulses_rev=20,
+                   button_pin=board.GP15, pixel_start=36, no_of_pixels=12, forward=True, pixel_offset=-1,
+                   configs=c2),
+    MidiController(client=self, name="c3", encoder_pin1=board.GP6, encoder_pin2=board.GP7, pulses_rev=20,
+                   button_pin=board.GP17, pixel_start=12, no_of_pixels=12, forward=True, pixel_offset=5,
+                   configs=c3),
+    MidiController(client=self, name ="c4", encoder_pin1=board.GP4, encoder_pin2=board.GP5, pulses_rev=20,
+                   button_pin=board.GP12, pixel_start=0, no_of_pixels=12, forward=False, pixel_offset=8,
+                   configs=c4)
+    ]
+```
+You can change the GPIO values to match your hardware configuration.
 ## MIDI
 The controller outputs control changed messages on MIDI channel 1. The control numbers used start at 21. An updated value is sent each time a control is moved. There are four sets of control settings, blue, yellow, green and magenta. Toggle between the settings by pressing down the knob of any controller. 
 
